@@ -1,16 +1,7 @@
-import { useState, type FormEvent } from 'react';
-import { Link as RouterLink, Navigate, useNavigate } from 'react-router-dom';
-import {
-  Alert,
-  Box,
-  Button,
-  Container,
-  Link,
-  Paper,
-  TextField,
-  Typography,
-} from '@mui/material';
 import PersonAddOutlinedIcon from '@mui/icons-material/PersonAddOutlined';
+import { Alert, Box, Button, Container, Link, Paper, TextField, Typography } from '@mui/material';
+import { useState, type FormEvent } from 'react';
+import { Navigate, Link as RouterLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 export function RegisterPage() {
@@ -75,16 +66,10 @@ export function RegisterPage() {
             </Box>
           </Box>
 
-          <Typography
-            variant="h5"
-            sx={{ textAlign: 'center', mb: 0.5, color: '#1e293b', fontWeight: 700 }}
-          >
+          <Typography variant="h5" sx={{ textAlign: 'center', mb: 0.5, color: '#1e293b', fontWeight: 700 }}>
             Create your account
           </Typography>
-          <Typography
-            variant="body2"
-            sx={{ mb: 3, textAlign: 'center', color: '#94a3b8' }}
-          >
+          <Typography variant="body2" sx={{ mb: 3, textAlign: 'center', color: '#94a3b8' }}>
             Join SocialPage and start sharing.
           </Typography>
 
@@ -94,11 +79,7 @@ export function RegisterPage() {
             </Alert>
           )}
 
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
-          >
+          <Box component="form" onSubmit={handleSubmit} sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
             <TextField
               label="Username"
               value={username}
@@ -124,21 +105,12 @@ export function RegisterPage() {
               fullWidth
               FormHelperTextProps={{ sx: { color: '#94a3b8' } }}
             />
-            <Button
-              type="submit"
-              variant="contained"
-              size="large"
-              disabled={submitting}
-              sx={{ mt: 1, py: 1.3 }}
-            >
+            <Button type="submit" variant="contained" size="large" disabled={submitting} sx={{ mt: 1, py: 1.3 }}>
               {submitting ? 'Creating account…' : 'Sign up'}
             </Button>
           </Box>
 
-          <Typography
-            variant="body2"
-            sx={{ mt: 3, textAlign: 'center', color: '#94a3b8' }}
-          >
+          <Typography variant="body2" sx={{ mt: 3, textAlign: 'center', color: '#94a3b8' }}>
             Already have an account?{' '}
             <Link
               component={RouterLink}
